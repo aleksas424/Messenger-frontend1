@@ -18,7 +18,7 @@ const Profile = () => {
     setLoading(true);
 
     try {
-      await axios.put('http://5.199.169.195:5000/api/users/profile', {
+      await axios.put('https://5.199.169.195:5000/api/users/profile', {
         name,
         email
       });
@@ -41,7 +41,7 @@ const Profile = () => {
     setLoading(true);
 
     try {
-      await axios.put('http://5.199.169.195:5000/api/users/password', {
+      await axios.put('https://5.199.169.195:5000/api/users/password', {
         currentPassword,
         newPassword
       });
