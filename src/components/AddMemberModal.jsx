@@ -9,10 +9,10 @@ export default function AddMemberModal({ chatId, onClose, onAdded }) {
 
   useEffect(() => {
     // Fetch current members
-    axios.get(`http://localhost:5000/api/group/${chatId}/members`)
+    axios.get(`http://5.199.169.195:5000/api/group/${chatId}/members`)
       .then(res => setMembers(res.data.map(m => m.id)));
     // Fetch all users
-    axios.get(`http://localhost:5000/api/users`)
+    axios.get(`http://5.199.169.195:5000/api/users`)
       .then(res => setUsers(res.data));
   }, [chatId]);
 
@@ -22,7 +22,7 @@ export default function AddMemberModal({ chatId, onClose, onAdded }) {
 
   const handleAdd = async () => {
     for (const userId of selected) {
-      await axios.post(`http://localhost:5000/api/group/${chatId}/members`, { userId });
+      await axios.post(`http://5.199.169.195:5000/api/group/${chatId}/members`, { userId });
     }
     onAdded();
     onClose();

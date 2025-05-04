@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       // Verify token and get user data
-      axios.get('http://localhost:5000/api/auth/me')
+      axios.get('http://5.199.169.195:5000/api/auth/me')
         .then(response => {
           setUser(response.data);
         })
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('http://5.199.169.195:5000/api/auth/login', {
         email,
         password
       });
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('http://5.199.169.195:5000/api/auth/register', {
         name,
         email,
         password
